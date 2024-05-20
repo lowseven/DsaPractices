@@ -1,7 +1,5 @@
 using BasicStructurePractices;
 using FluentAssertions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace BasicStructureTests;
 
@@ -26,13 +24,13 @@ public class DynamicArrayTest
     [TestMethod]
     public void DynamicArray_Add_Should_Be_Able_To_Add_Items()
     {
-        //ARRANGE
-        var uut = new DynamicArray<string>();
-
-        //ACT
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
+        //ARRANGE, ACT
+        var uut = new DynamicArray<string>
+        {
+            "Hello",
+            "World",
+            "!!"
+        };
 
         //ASSERT
         uut.Capacity.Should().Be(16);
@@ -45,14 +43,14 @@ public class DynamicArrayTest
     [TestMethod]
     public void DynamicArray_Add_Should_Be_Able_To_Resize_MaximmumCapacity()
     {
-        //ARRANGE
-        var uut = new DynamicArray<string>(2);
-
-        //ACT
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
-        uut.Add("!!");
+        //ARRANGE, ACT
+        var uut = new DynamicArray<string>(2)
+        {
+            "Hello",
+            "World",
+            "!!",
+            "!!"
+        };
 
         //ASSERT
         uut.Capacity.Should().Be(8);
@@ -67,11 +65,13 @@ public class DynamicArrayTest
     public void DynamicArray_RemoveAt_Should_Remove_Item_At_index()
     {
         //ARRANGE
-        var uut = new DynamicArray<string>(2);
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
-        uut.Add("!!");
+        var uut = new DynamicArray<string>(2)
+        {
+            "Hello",
+            "World",
+            "!!",
+            "!!"
+        };
 
         //ACT
         var removedItem = uut.RemoveAt(1);
@@ -90,11 +90,13 @@ public class DynamicArrayTest
     public void DynamicArray_Remove_Should_Remove_Item_At_index()
     {
         //ARRANGE
-        var uut = new DynamicArray<string>(2);
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
-        uut.Add("!!");
+        var uut = new DynamicArray<string>(2)
+        {
+            "Hello",
+            "World",
+            "!!",
+            "!!"
+        };
 
         //ACT
         var removedItem = uut.Remove("!!");
@@ -113,12 +115,13 @@ public class DynamicArrayTest
     public void DynamicArray_Enumerator_Should_Be_Iterable()
     {
         //ARRANGE
-        var uut = new DynamicArray<string>(2);
-
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
-        uut.Add("!!");
+        var uut = new DynamicArray<string>(2)
+        {
+            "Hello",
+            "World",
+            "!!",
+            "!!"
+        };
 
         //ACT, ASSERT
         uut.SequenceEqual(new[] { "Hello", "World", "!!", "!!" }).Should().BeTrue();
@@ -131,12 +134,13 @@ public class DynamicArrayTest
         var expectedVal = $"[{string.Join(", ", new[] { "Hello", "World", "!!", "!!" }).Trim()}]";
 
         //ACT
-        var uut = new DynamicArray<string>(2);
-
-        uut.Add("Hello");
-        uut.Add("World");
-        uut.Add("!!");
-        uut.Add("!!");
+        var uut = new DynamicArray<string>(2)
+        {
+            "Hello",
+            "World",
+            "!!",
+            "!!"
+        };
 
         //ACT
         expectedVal.ToString().Should().Be(uut.ToString());

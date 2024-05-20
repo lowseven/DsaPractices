@@ -29,7 +29,7 @@ public sealed class DynamicArray<T> : IEnumerable<T>
     {
         if (this.Size + 1 >= this._array.Length)
         {
-            this.Capacity = this.Capacity * 2;
+            this.Capacity *= 2;
 
             var newArray = new T[this.Capacity];
             this._array.CopyTo(newArray, 0);
@@ -42,7 +42,7 @@ public sealed class DynamicArray<T> : IEnumerable<T>
 
     public T RemoveAt(int index)
     {
-        if (index < 0 && Size < index)
+        if (!(index >= 0 || Size >= index))
             throw new ArgumentOutOfRangeException($"index out of range{nameof(index)}");
 
         var newArray = new T[this.Capacity];
