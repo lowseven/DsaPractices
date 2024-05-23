@@ -177,4 +177,22 @@ public sealed class SimpleLinkedListTest
         Action uut = () => l.Remove("LoremA");
         uut.Should().Throw<InvalidOperationException>();
     }
+
+    [TestMethod]
+    public void SLL_AddFirst_Should_AddNewItemBeforeHead()
+    {
+        //ARRANGE
+        var l = new SimpleLinkedList<string>();
+        l.Add("Hello");
+        l.Add("Amazing");
+        l.Add("World");
+        l.Add("!!");
+
+        //ACT
+        l.AddFirst("Bananas");
+
+        //ASSERT
+        l.First().Should().Be("Bananas");
+    }
+
 }

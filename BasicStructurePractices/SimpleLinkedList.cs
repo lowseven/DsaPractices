@@ -2,7 +2,7 @@
 
 namespace BasicStructurePractices;
 
-public sealed class SimpleLinkedList<T> : IEnumerable<T>
+public class SimpleLinkedList<T> : IEnumerable<T>
 {
     public sealed class Node<TT>
     {
@@ -18,8 +18,8 @@ public sealed class SimpleLinkedList<T> : IEnumerable<T>
 
     public int Count => _size;
 
-    private Node<T>? _head;
-    private Node<T>? _tail;
+    protected Node<T>? _head;
+    protected Node<T>? _tail;
     private int _size;
 
     public bool IsEmpty => _tail is null && _head is null;
@@ -61,13 +61,23 @@ public sealed class SimpleLinkedList<T> : IEnumerable<T>
         {
             var newNode = new Node<T>(item, null);
             this._tail!._next = newNode;
-
             this._tail = newNode;
         }
 
         this._size++;
 
         return this.Count;
+    }
+
+    public void AddFirst(T? item)
+    {
+        var node = new Node<T>(item, _head);
+        this._head = node;
+
+        if (IsEmpty)
+            _tail = _head;
+
+        this._size++;
     }
 
     public T? Remove(T item)
