@@ -16,7 +16,7 @@ public sealed class LinkedListStack<T> : LinkedList<T>
         AddFirst(item);
 
     //pop element off the stack
-    //Throws an erro is the stack is empty
+    //Throws an error is the stack is empty
     public T? Pop()
     {
         if (this.Any() is false)

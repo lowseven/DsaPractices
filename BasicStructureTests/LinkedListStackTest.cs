@@ -68,20 +68,20 @@ public sealed class LinkedListStackTest
         l.Push("Mars");
 
         //ACT
-        var uut = l.Pop();
+        var uut = l.Peek();
 
         //ASSERT
         uut.Should().Be("Mars");
-        l.Should().HaveCount(2);
+        l.Should().HaveCount(3);
     }
 
     [TestMethod]
-    public void LLS_Pop_When_EmptyList_Should_Throw_InvalidOperationException()
+    public void LLS_Peek_When_EmptyList_Should_Throw_InvalidOperationException()
     {
         //ARRANGE
         var l = new LinkedListStack<string>();
         //ACT
-        Action uut = () => l.Pop();
+        Action uut = () => l.Peek();
 
         //ASSERT
         uut.Should().Throw<InvalidOperationException>();
