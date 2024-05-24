@@ -194,5 +194,4 @@ public sealed class SimpleLinkedListTest
         //ASSERT
         l.First().Should().Be("Bananas");
     }
-
 }
