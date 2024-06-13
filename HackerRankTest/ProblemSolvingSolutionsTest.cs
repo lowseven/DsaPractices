@@ -128,4 +128,16 @@ public class ProblemSolvingSolutionsTest
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow(2016, "12.09.2016")]
+    [DataRow(2017, "13.09.2017")]
+    [DataRow(1918, "26.09.1918")]
+    [DataRow(1800, "12.09.1800")]
+    public void DayOfProgrammerBetterBetterSolutionProblemTest(int year, string res)
+    {
+        var uut = DayOfTheProgrammerProblem.DayOfProgrammerBetterBetterSolution(year);
+
+        uut.Should().Be(res);
+    }
 }
