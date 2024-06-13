@@ -65,9 +65,66 @@ public class ProblemSolvingSolutionsTest
 
     [TestMethod]
     [DataRow(new[] { 2, 6 }, new int[] { 24, 36 }, 2)]
+    [DataRow(new[] { 3, 4 }, new int[] { 24, 48 }, 2)]
+    [DataRow(new[] { 2, 4 }, new int[] { 16, 32, 96 }, 3)]
     public void BetweenTwoSetsProblem(int[] set1, int[] set2, int res)
     {
         var uut = BetweenTwoSets.GetTotalX(set1.ToList(), set2.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new[] { 10, 5, 20, 20, 4, 5, 2, 25, 1 }, new int[] { 2, 4 })]
+    [DataRow(new[] { 3, 4, 21, 36, 10, 28, 35, 5, 24, 42 }, new int[] { 4, 0 })]
+    public void BreakingBestAndWorstRecordsProblemTest(int[] list, int[] res)
+    {
+        var uut = BreakingBestAndWorstRecordsProblem.BreakingRecords(list.ToList());
+
+        uut.SequenceEqual(res).Should().BeTrue();
+    }
+
+    [TestMethod]
+    [DataRow(new[] { 1, 2, 1, 3, 2 }, 3, 2, 2)]
+    [DataRow(new[] { 1, 1, 1, 1, 1, 1 }, 3, 2, 0)]
+    [DataRow(new[] { 4 }, 4, 1, 1)]
+    [DataRow(new[] { 2, 2, 2, 1, 3, 2, 2, 3, 3, 1, 4, 1, 3, 2, 2, 1, 2, 2, 4, 2, 2, 3, 5, 3, 4, 3, 2, 1, 4, 5, 4 }, 10, 4, 7)]
+    public void TheBirthdayBarProblemTest(int[] list, int day, int month, int res)
+    {
+        var uut = TheBirthdayBarProblem.Birthday(list.ToList(), day, month);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(6, 5, new[] { 1, 2, 3, 4, 5, 6 }, 3)]
+    [DataRow(6, 3, new[] { 1, 3, 2, 6, 1, 2, }, 5)]
+    public void DivisibleSumPairsProblemTest(int n, int k, int[] ar, int res)
+    {
+        var uut = DivisibleSumPairsProblem.DivisibleSumPairs(n, k, ar.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new[] { 1, 4, 4, 4, 5, 3 }, 4)]
+    [DataRow(new[] { 1, 1, 2, 2, 3 }, 1)]
+    [DataRow(new[] { 1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4 }, 3)]
+    public void MigratoryBirdsProblemTest(int[] ar, int res)
+    {
+        var uut = MigratoryBirdsProblem.MigratoryBirds(ar.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(2016, "12.09.2016")]
+    [DataRow(2017, "13.09.2017")]
+    [DataRow(1918, "26.09.1918")]
+    [DataRow(1800, "12.09.1800")]
+    public void DayOfTheProgrammerProblemTest(int year, string res)
+    {
+        var uut = DayOfTheProgrammerProblem.DayOfProgrammer(year);
 
         uut.Should().Be(res);
     }

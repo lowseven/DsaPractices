@@ -45,4 +45,25 @@ public sealed class DayliesJune2024
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow(8, "UDDDUDUU", 1)]
+    [DataRow(12, "DDUUDDUDUUUD", 2)]
+    public void CountingValeysProblemTest(int steps, string path, int res)
+    {
+        var uut = CountingValeysProblem.CountingValleys(steps, path);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new[] { 4, 6, 5, 3, 3, 1 }, 3)]
+    [DataRow(new[] { 1, 1, 2, 2, 4, 4, 5, 5, 5 }, 5)]
+    [DataRow(new[] { 1, 2, 2, 3, 1, 2 }, 5)]
+    public void PickingNumbersProblemTest(int[] numbers, int res)
+    {
+        var uut = PickingNumbersProblem.PickingNumbers(numbers.ToList());
+
+        uut.Should().Be(res);
+    }
 }

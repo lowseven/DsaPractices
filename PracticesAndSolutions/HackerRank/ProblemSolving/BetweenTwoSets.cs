@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-
-namespace PracticesAndSolutions.HackerRank.ProblemSolving
+﻿namespace PracticesAndSolutions.HackerRank.ProblemSolving
 {
     //https://www.hackerrank.com/challenges/between-two-sets/problem
     public static class BetweenTwoSets
