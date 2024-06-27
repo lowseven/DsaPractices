@@ -140,4 +140,114 @@ public class ProblemSolvingSolutionsTest
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow(new int[] { 3, 10, 2, 9 }, 1, 12, "5")]
+    [DataRow(new int[] { 3, 10, 2, 9 }, 1, 7, "Bon Appetit")]
+    public void BonAppetitProblemSolutionProblemTest(int[] bill, int k, int b, string res)
+    {
+        var uut = BonAppetitProblem.BonAppetit(bill.ToList(), k, b);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 1, 2, 1, 2, 1, 3, 2 }, 2)]
+    [DataRow(new int[] { 10, 20, 20, 10, 10, 30, 50, 10, 20 }, 3)]
+    public void SockMerchantProblemTest(int[] socks, int res)
+    {
+        var uut = SockMerchantProblem.SockMerchant(0, socks.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 40, 50, 60 }, new int[] { 5, 8, 12 }, 60, 58)]
+    [DataRow(new int[] { 3, 1 }, new int[] { 5, 2, 8 }, 10, 9)]
+    public void GetMoneySpentProblemTest(int[] keyboards, int[] drives, int b, int res)
+    {
+        var uut = GetMoneySpentProblem.GetMoneySpent(keyboards, drives, b);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow("abcac", 10, 4)]
+    [DataRow("aba", 10, 7)]
+    [DataRow("a", 1000000000000, 1000000000000)]
+    [DataRow("ceebbcb", 817723, 0)]
+    [DataRow("gfcaaaecbg", 547602, 164280)]
+    [DataRow("epsxyyflvrrrxzvnoenvpegvuonodjoxfwdmcvwctmekpsnamchznsoxaklzjgrqruyzavshfbmuhdwwmpbkwcuomqhiyvuztwvq", 549382313570, 16481469408)]
+    public void RepeatedStringsProblemTest(string s, long n, long res)
+    {
+        var uut = RepeatedStringsProblem.RepeatedString(s, n);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(4, new int[] { 1, 6, 3, 5, 2 }, 2)]
+    [DataRow(1, new int[] { 1, 2, 3, 3, 2 }, 2)]
+    [DataRow(3, new int[] { 1, 2, 3, 3, 2 }, 0)]
+    [DataRow(4, new int[] { 1, 6, 3, 5, 2 }, 2)]
+    [DataRow(7, new int[] { 2, 5, 4, 5, 2 }, 0)]
+    public void CatAndMouseProblemTest(int k, int[] height, int res)
+    {
+        var uut = TheHurdleRaceProblem.HurdleRace(k, height.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 }, "abc", 9)]
+    [DataRow(new int[] { 1, 3, 1, 3, 1, 4, 1, 3, 2, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7 }, "zaba", 28)]
+    public void DesignerPdfViewerProblemTest(int[] height, string word, int res)
+    {
+        var uut = DesignerPdfViewerProblem.DesignerPdfViewer(height.ToList(), word);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(4, 6, 2, 3)]
+    [DataRow(5, 2, 1, 2)]
+    [DataRow(5, 2, 2, 3)]
+    [DataRow(3, 7, 3, 3)]
+    [DataRow(3, 7, 2, 2)]
+    public void SaveThePrisionerProblemTest(int n, int m, int s, int res)
+    {
+        var uut = SaveThePrisionerProblem.SaveThePrisoner(n, m, s);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 1, 2, 3 }, 2, new int[] { 0, 1, 2 }, new int[] { 2, 3, 1 })]
+    [DataRow(new int[] { 1, 2, 3 }, 3, new int[] { 0, 1, 2 }, new int[] { 1, 2, 3 })]
+    public void CircularArrayRotationProblemTest(int[] a, int k, int[] queries, int[] res)
+    {
+        var uut = CircularArrayRotationProblem.CircularArrayRotation(a.ToList(), k, queries.ToList());
+
+        uut.SequenceEqual(res).Should().BeTrue();
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 0, 0, 0, 0, 1, 0 }, 3)]
+    [DataRow(new int[] { 0, 0, 1, 0, 0, 1, 0 }, 4)]
+    public void JumpingOntheCloudsProblemTest(int[] a, int res)
+    {
+        var uut = JumpingOntheCloudsProblem.JumpingOnClouds(a.ToList());
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow(new int[] { 2, 3, 1 }, new int[] { 2, 3, 1 })]
+    [DataRow(new int[] { 4, 3, 5, 1, 2 }, new int[] { 1, 3, 5, 4, 2 })]
+    public void JumpingOntheCloudsProblemTest(int[] a, int[] res)
+    {
+        var uut = PermutationEquationProblem.PermutationEquation(a.ToList());
+
+        uut.SequenceEqual(res).Should().BeTrue();
+    }
 }

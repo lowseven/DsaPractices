@@ -66,4 +66,19 @@ public sealed class DayliesJune2024
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow(4, 6)]
+    [DataRow(5, 5)]
+    [DataRow(8, 2)]
+    [DataRow(22, 24)]
+    [DataRow(17, 5)]
+    [DataRow(9, 1)]
+    //[DataRow(1000000000000, 649267441662)]
+    public void StrangeCounterProblemTest(int t, int res)
+    {
+        var uut = StrangeCounterProblem.StrangeCounter(t);
+
+        uut.Should().Be(res);
+    }
 }
