@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicStructurePractices", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicStructureTests", "BasicStructureTests\BasicStructureTests.csproj", "{255FF0DB-A6F2-4EED-94D3-9D5599A640DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticesAndSolutions", "PracticesAndSolutions\PracticesAndSolutions.csproj", "{70E48D8B-C7E4-4A70-AE4F-37CD9178B732}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PracticesAndSolutions", "PracticesAndSolutions\PracticesAndSolutions.csproj", "{70E48D8B-C7E4-4A70-AE4F-37CD9178B732}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HackerRankTest", "HackerRankTest\HackerRankTest.csproj", "{348ABAA8-5F63-47B4-92A6-BBA7EAFA6049}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HackerRankTest", "HackerRankTest\HackerRankTest.csproj", "{348ABAA8-5F63-47B4-92A6-BBA7EAFA6049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCodeTest", "LeetCodeTest\LeetCodeTest.csproj", "{42E89143-4A3E-4AFF-A483-C8725BA5B2BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{348ABAA8-5F63-47B4-92A6-BBA7EAFA6049}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{348ABAA8-5F63-47B4-92A6-BBA7EAFA6049}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{348ABAA8-5F63-47B4-92A6-BBA7EAFA6049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E89143-4A3E-4AFF-A483-C8725BA5B2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E89143-4A3E-4AFF-A483-C8725BA5B2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E89143-4A3E-4AFF-A483-C8725BA5B2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E89143-4A3E-4AFF-A483-C8725BA5B2BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

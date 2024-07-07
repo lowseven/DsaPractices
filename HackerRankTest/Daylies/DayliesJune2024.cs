@@ -81,4 +81,29 @@ public sealed class DayliesJune2024
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow("abc", "def", 6, "Yes")]
+    [DataRow("hackerhappy", "hackerrank", 9, "Yes")]
+    [DataRow("aba", "aba", 7, "Yes")]
+    [DataRow("ashley", "ash", 2, "No")]
+    [DataRow("ashley", "ash", 3, "Yes")]
+    [DataRow("aaaaaaaaaa", "aaaaa", 7, "Yes")]
+    [DataRow("zzzzz", "zzzzzzz", 4, "Yes")]
+    public void AppendAndDeleteProblemTest(string s, string t, int k, string res)
+    {
+        var uut = AppendAndDeleteProblem.AppendAndDelete(s, t, k);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    //[DataRow(5, 3, new int[] { 4, 2, 6, 1, 10 }, 4)]
+    [DataRow(2, 3, new int[] { 4, 2}, 1)]
+    public void LisaWorkbookProblemTest(int n, int k, int[] arr, int res)
+    {
+        var uut = LisaWorkbookProblem.Workbook(n, k, arr.ToList());
+
+        uut.Should().Be(res);
+    }
 }

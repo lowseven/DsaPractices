@@ -250,4 +250,14 @@ public class ProblemSolvingSolutionsTest
 
         uut.SequenceEqual(res).Should().BeTrue();
     }
+
+    [TestMethod]
+    [DataRow(new int[] { 0, 0, 1, 0, 0, 1, 1, 0 }, 2, 92)]
+    [DataRow(new int[] { 0, 0, 1, 0 }, 2, 96)]
+    public void JumpingOnTheCloudRevisitedProblemTest(int[] a, int k, int res)
+    {
+        var uut = JumpingOnTheCloudRevisitedProblem.JumpingOnClouds(a, k);
+
+        uut.Should().Be(res);
+    }
 }
