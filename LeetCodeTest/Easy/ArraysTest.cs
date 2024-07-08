@@ -58,4 +58,30 @@ public class ArraysTest
         uut.SequenceEqual(res).Should().BeTrue();
     }
 
+    [TestMethod]
+    [DataRow(new string[] { "5", "2", "C", "D", "+" }, 30)]
+    [DataRow(new string[] { "5", "-2", "4", "C", "D", "9", "+", "+" }, 27)]
+    [DataRow(new string[] { "1", "D", "D", "D" }, 15)]
+    public void BaseBallGameProblemTest(string[] arr, int res)
+    {
+        var uut = BaseBallGameProblem.CalPoints(arr);
+
+        uut.Should().Be(res);
+    }
+
+    [TestMethod]
+    [DataRow("([{}])", true)]
+    [DataRow("[(])", false)]
+    [DataRow("[]", true)]
+    [DataRow("(]", false)]
+    [DataRow("){", false)]
+    [DataRow(")(){}", false)]
+    [DataRow(")", false)]
+    [DataRow("(])", false)]
+    public void ValidateParenthesisProblemTest(string arr, bool res)
+    {
+        var uut = ValidateParenthesisProblem.IsValid(arr);
+
+        uut.Should().Be(res);
+    }
 }
