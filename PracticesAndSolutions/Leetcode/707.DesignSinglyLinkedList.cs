@@ -89,9 +89,6 @@ public class MyLinkedList : IEnumerable<int>
         if (index == 0)
             Head = Head.Next;
 
-        if (Head == null)
-            return;
-
         Node tempNode = Head;
         for (int i = 0; i < index - 1; i++)
         {

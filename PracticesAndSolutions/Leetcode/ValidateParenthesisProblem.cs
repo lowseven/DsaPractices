@@ -5,7 +5,7 @@ public static class ValidateParenthesisProblem
 {
     public static bool IsValid(string s)
     {
-        with hashmap
+        //with hashmap
         var stack = new Stack<char>();
         var hm = new Dictionary<char, char>()
         {

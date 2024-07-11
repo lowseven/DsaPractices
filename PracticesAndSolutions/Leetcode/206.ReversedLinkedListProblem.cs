@@ -21,23 +21,41 @@ public class ReversedLinkedListProblem
         //Follow up: A linked list can be reversed either iteratively or recursively.Could you implement both?
 
         //-------------------------------------------
-        //recursive solution
-
+        //two poiter solution
         public ListNode ReverseList(ListNode head)
         {
-            return Reverse(head, null);
+            ListNode curr = head;
+            ListNode prev = null;
+
+            while (curr != null)
+            {
+                var tempNode = curr;
+                curr.next = prev;
+                prev = curr;
+                curr = tempNode.next;
+            }
+
+            return curr;
         }
 
-        private ListNode Reverse(ListNode curr, ListNode prev)
-        {
-            if (curr == null)
-                return prev;
+        //-------------------------------------------
+        //recursive solution
 
-            var next = curr.next;
-            curr.next = prev;
+        //public ListNode ReverseList(ListNode head)
+        //{
+        //    return Reverse(head, null);
+        //}
 
-            return Reverse(next, curr);
-        }
+        //private ListNode Reverse(ListNode curr, ListNode prev)
+        //{
+        //    if (curr == null)
+        //        return prev;
+
+        //    var next = curr.next;
+        //    curr.next = prev;
+
+        //    return Reverse(next, curr);
+        //}
 
 
 

@@ -84,4 +84,14 @@ public class ArraysTest
 
         uut.Should().Be(res);
     }
+
+    [TestMethod]
+    [DataRow(new int[] { 1, 1, 0, 0 }, new int[] { 0, 1, 0, 1 }, 0)]
+    [DataRow(new int[] { 1, 1, 1, 0, 0, 1 }, new int[] { 1, 0, 0, 0, 1, 1 }, 3)]
+    public void NumberOfStudentsUnableToEatLunchProblemTest(int[] students, int[] sandwitches, int res)
+    {
+        var uut = NumberOfStudentsUnableToEatLunchProblem.CountStudents(students, sandwitches);
+
+        uut.Should().Be(res);
+    }
 }
