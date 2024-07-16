@@ -2,6 +2,7 @@
 
 public static class TapeEquilibriumProblem
 {
+    //https://app.codility.com/programmers/lessons/3-time_complexity/tape_equilibrium/
     public static int Solution(int[] A)
     {
         var total = A.Sum();
