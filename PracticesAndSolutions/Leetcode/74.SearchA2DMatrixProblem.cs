@@ -10,7 +10,6 @@ namespace PracticesAndSolutions.Leetcode
     {
         public bool SearchMatrix(int[][] matrix, int target)
         {
-            var arrSize = matrix[0].Length * matrix.Length;
             var left = 0;
             var right = matrix[0].Length * matrix.Length - 1;
 
